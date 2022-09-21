@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+   
+<body>
+    <form name="inputnumber" 
+         autocomplete="off">
+        <input id="MyNumber" type="number" onkeypress="return NumericVal(event)" size="50%" />
+        <br><br>
+        <input type="submit" value="Click" onclick="return detailssubmit()">
+    </form>  
+</body>
+
+
+
+<script>
+    function NumericVal(evt) {
+        var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+        if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57) && ASCIICode!=45)
+            return false;
+        return true;
+    }
+</script>
+
+<script>
+    function detailssubmit() {
+        let input = document.getElementById("MyNumber").value;
+        if(input<0){
+            alert("enter a positive value");
+        } else {
+            for (let i = 0; i < 3; i++) {
+                input++;
+                input++;
+                alert(input);
+            }
+        }
+    }
+</script>
+  
+</html>
